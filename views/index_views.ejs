@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<a href="/pokemon/new">Add new pokemon</a>
+    <ul>
+        <% for(let x = 0; x < pokemon.length; x++) { %>
+        <li>
+          <a href="/pokemon/<%=x%>"><img src=<%=pokemon[x].img %>></a>
+           </li>
+      <form action="/pokemon/<%=x%>?_method=DELETE" method="POST">
+        <input type="submit" value="delete">
+      </form>
+      </ul>
+      <a href="/pokemon/<%=x%>/edit">edit</a>
+      <% } %>
+</body> 
+</html>
